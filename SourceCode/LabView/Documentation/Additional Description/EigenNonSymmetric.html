@@ -1,0 +1,11 @@
+<p>The function calculates eigenvalues and optionally eigenvectors of the square matrix <code>src</code>:</p>
+
+<div>{{< katex >}}$
+\texttt{src} \cdot \texttt{eigenvectors.row}(i)^T
+= \texttt{eigenvalues.at<srcType>}(i) \cdot \texttt{eigenvectors.row}(i)^T
+${{< /katex >}}</div>
+
+{{< alert context="warning" text="Assumes real eigenvalues." />}}
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gaf51987e03cac8d171fbd2b327cf966f6" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

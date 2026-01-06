@@ -1,0 +1,25 @@
+<p>The function compare performs element-wise comparison for:</p>
+<ul>
+  <li><strong>Two arrays</strong> (when <code>src1</code> and <code>src2</code> have the same size):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{src1}(I) \,\texttt{cmpop}\, \texttt{src2}(I)
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>Elements of <code>src1</code> with a scalar <code>src2</code></strong> (when <code>src2</code> is constructed from <code>Scalar</code> or has a single element):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{src1}(I) \,\texttt{cmpop}\, \texttt{src2}
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>A scalar <code>src1</code> with elements of <code>src2</code></strong> (when <code>src1</code> is constructed from <code>Scalar</code> or has a single element):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{src1} \,\texttt{cmpop}\, \texttt{src2}(I)
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+<p>When the comparison result is true, the corresponding element of the output array is set to 255.</p>
+
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga303cfb72acf8cbb36d884650c09a3a97" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

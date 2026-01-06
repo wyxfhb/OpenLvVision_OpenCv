@@ -1,0 +1,19 @@
+<p>The function <code>solve</code> solves a linear system or least-squares problem:</p>
+<ul>
+  <li><strong>Linear System Solution</strong>:
+    <div>{{< katex >}}$
+    \texttt{dst} = \arg \min_X \| \texttt{src1} \cdot X - \texttt{src2} \|
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>The function finds the result <code>dst</code> (or <code>X</code> in the formula) that satisfies the linear system:</p>
+<div>{{< katex >}}$
+\texttt{src1} \cdot \texttt{dst} = \texttt{src2}
+${{< /katex >}}</div>
+
+<p>If <code>src1</code> is a non-singular square matrix, the solution is exact (<code>DECOMP_LU</code> or <code>DECOMP_CHOLESKY</code>). Otherwise, the function calculates the best least-squares solution (<code>DECOMP_SVD</code> or <code>DECOMP_QR</code>).</p>
+
+{{< alert context="warning" text="The function returns a boolean value. It returns true if the matrix src1 is non-singular and the solution was found, and false otherwise." />}}
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga12b43690dbd31fed96f213eefead2373" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

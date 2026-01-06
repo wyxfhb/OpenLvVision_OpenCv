@@ -1,0 +1,34 @@
+<p>The function <code>norm</code> calculates the absolute norm of an array or the absolute difference norm of two arrays:</p>
+<ul>
+  <li><strong>Absolute Norm</strong> (when there is no second array <code>src2</code>):
+    <div>{{< katex >}}$
+    \| \texttt{src1} \|_L =
+    \begin{cases}
+    \| \texttt{src1} \|_{L\infty} = \max_I | \texttt{src1}(I) | & \text{if } \texttt{normType} = \texttt{NORM\_INF} \\
+    \| \texttt{src1} \|_{L1} = \sum_I | \texttt{src1}(I) | & \text{if } \texttt{normType} = \texttt{NORM\_L1} \\
+    \| \texttt{src1} \|_{L2} = \sqrt{\sum_I \texttt{src1}(I)^2} & \text{if } \texttt{normType} = \texttt{NORM\_L2}
+    \end{cases}
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>Absolute Difference Norm</strong> (when there is a second array <code>src2</code>):
+    <div>{{< katex >}}$
+    \| \texttt{src1} - \texttt{src2} \|_L =
+    \begin{cases}
+    \| \texttt{src1} - \texttt{src2} \|_{L\infty} = \max_I | \texttt{src1}(I) - \texttt{src2}(I) | & \text{if } \texttt{normType} = \texttt{NORM\_INF} \\
+    \| \texttt{src1} - \texttt{src2} \|_{L1} = \sum_I | \texttt{src1}(I) - \texttt{src2}(I) | & \text{if } \texttt{normType} = \texttt{NORM\_L1} \\
+    \| \texttt{src1} - \texttt{src2} \|_{L2} = \sqrt{\sum_I (\texttt{src1}(I) - \texttt{src2}(I))^2} & \text{if } \texttt{normType} = \texttt{NORM\_L2}
+    \end{cases}
+    ${{< /katex >}}</div>
+  </li>
+  
+  <li><strong>Relative Difference Norm</strong> (when <code>normType</code> is <code>NORM_RELATIVE</code>):
+    <div>{{< katex >}}$
+    \| \texttt{src1} - \texttt{src2} \|_L / \| \texttt{src2} \|_L
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>Where <code>I</code> is a multi-dimensional index of array elements. In case of multi-channel arrays, the norm is calculated over all channels.</p>
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga7c331fb8dd951707e184ef4e3f21dd33" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

@@ -1,0 +1,9 @@
+<p>The function cv::getOptimalDFTSize returns the minimum number N that is greater than or equal to vecsize so that the DFT of a vector of size N can be processed efficiently. In the current implementation N = 2 ^p^ * 3 ^q^ * 5 ^r^ for some integer p, q, r.</p>
+
+<p>The function returns a negative number if vecsize is too large (very close to INT_MAX ).</p>
+
+<p>While the function cannot be used directly to estimate the optimal vector size for DCT transform (since the current DCT implementation supports only even-size vectors), it can be easily processed as getOptimalDFTSize((vecsize+1)/2)*2. 
+</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga6577a2e59968936ae02eb2edde5de299" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

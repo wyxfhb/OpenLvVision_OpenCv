@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CV-Modules">
+      <UniqueIdentifier>{cf3f7b07-32b4-42e5-b551-4e12339f9365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interorp">
+      <UniqueIdentifier>{1c3c9541-0f20-4392-840a-c170934397c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interorp\MatHandling">
+      <UniqueIdentifier>{1f391810-efd2-4b5c-90e6-c8957417533b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interorp\Edvr">
+      <UniqueIdentifier>{3cf366e3-ae3a-490f-8a24-ebad46547289}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DLL">
+      <UniqueIdentifier>{309fe416-9b47-4462-ab6a-8ee85f5a1876}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interorp\ErrorHandling">
+      <UniqueIdentifier>{00418758-2afa-43ae-8365-1fad783a08fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interorp\StringHandling">
+      <UniqueIdentifier>{dd6d9426-a518-4a8f-951b-b92e3f280414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\CoreFunctionality">
+      <UniqueIdentifier>{06e7cc26-0462-404d-b3c0-242a652c075f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\CoreFunctionality\RNG">
+      <UniqueIdentifier>{1ee54b83-62da-4ae3-8836-567d15f021bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interorp\ArrayHandling">
+      <UniqueIdentifier>{1f85e104-0c43-4048-bd4e-776dbd07e178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\CoreFunctionality\PCA">
+      <UniqueIdentifier>{b26709a2-6a82-4e1a-ac87-9ef61a21f396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\CoreFunctionality\LDA">
+      <UniqueIdentifier>{cf222ccc-d8fa-4a5e-9ce2-78cf53570af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\System">
+      <UniqueIdentifier>{3d6dc6f0-4183-42d4-ac64-4c99d67f18ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\CoreFunctionality\SVD">
+      <UniqueIdentifier>{5a87cfe9-4dd8-41a0-a714-0e92f3843cf3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\DLL\framework.h">
+      <Filter>DLL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\DLL\pch.h">
+      <Filter>DLL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\MatHandling\MatHandling.h">
+      <Filter>Interorp\MatHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\Points.hpp">
+      <Filter>Interorp</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\Edvr\EdvrTypes.h">
+      <Filter>Interorp\Edvr</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\Edvr\EdvrObject.hpp">
+      <Filter>Interorp\Edvr</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\ErrorHandling\ErrorHandling.h">
+      <Filter>Interorp\ErrorHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\StringHandling\StringHandling.h">
+      <Filter>Interorp\StringHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\CoreFunctionality\CoreFunctionality.h">
+      <Filter>CV-Modules\CoreFunctionality</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\CoreFunctionality\RNG\RNG.h">
+      <Filter>CV-Modules\CoreFunctionality\RNG</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\ArrayHandling\Array1D.hpp">
+      <Filter>Interorp\ArrayHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\ArrayHandling\ArrayTypes.h">
+      <Filter>Interorp\ArrayHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\ArrayHandling\Array2D.hpp">
+      <Filter>Interorp\ArrayHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\CoreFunctionality\PCA\PCA.h">
+      <Filter>CV-Modules\CoreFunctionality\PCA</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\CoreFunctionality\LDA\LDA.h">
+      <Filter>CV-Modules\CoreFunctionality\LDA</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\System\System.h">
+      <Filter>CV-Modules\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\CoreFunctionality\SVD\SVD.h">
+      <Filter>CV-Modules\CoreFunctionality\SVD</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\DLL\dllmain.cpp">
+      <Filter>DLL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DLL\pch.cpp">
+      <Filter>DLL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Interorp\MatHandling\MatHandling.cpp">
+      <Filter>Interorp\MatHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Interorp\ErrorHandling\ErrorHandling.cpp">
+      <Filter>Interorp\ErrorHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Interorp\StringHandling\StringHandling.cpp">
+      <Filter>Interorp\StringHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\CoreFunctionality\CoreFunctionality.cpp">
+      <Filter>CV-Modules\CoreFunctionality</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\CoreFunctionality\RNG\RNG.cpp">
+      <Filter>CV-Modules\CoreFunctionality\RNG</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\CoreFunctionality\PCA\PCA.cpp">
+      <Filter>CV-Modules\CoreFunctionality\PCA</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\CoreFunctionality\LDA\LDA.cpp">
+      <Filter>CV-Modules\CoreFunctionality\LDA</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\System\System.cpp">
+      <Filter>CV-Modules\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\CoreFunctionality\SVD\SVD.cpp">
+      <Filter>CV-Modules\CoreFunctionality\SVD</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

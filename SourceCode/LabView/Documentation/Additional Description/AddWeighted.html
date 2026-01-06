@@ -1,0 +1,10 @@
+<p>The function <code>addWeighted</code> calculates the weighted sum of two arrays as follows:</p>
+<div>{{< katex >}}$
+\texttt{dst}(I) = \texttt{saturate} ( \texttt{src1}(I) \cdot \texttt{alpha} + \texttt{src2}(I) \cdot \texttt{beta} + \texttt{gamma} )
+${{< /katex >}}</div>
+<p>Where <code>I</code> is a multi-dimensional index of array elements. In case of multi-channel arrays, each channel is processed independently.</p>
+
+
+{{< alert context="warning" text="Saturation is not applied when the arrays have the depth CV_32S. You may even get a negative value in the case of overflow." />}}
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gafafb2513349db3bcff51f54ee5592a19" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

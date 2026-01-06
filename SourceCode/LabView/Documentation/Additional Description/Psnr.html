@@ -1,0 +1,10 @@
+<p>This function calculates the Peak Signal-to-Noise Ratio (PSNR) image quality metric in decibels (dB), between two input arrays <code>src1</code> and <code>src2</code>. The arrays must have the same type.</p>
+
+<p>The PSNR is calculated as follows:</p>
+<div>{{< katex >}}$
+\texttt{PSNR} = 10 \cdot \log_{10}{\left( \frac{R^2}{MSE} \right) }
+${{< /katex >}}</div>
+
+<p>where $R$ is the maximum integer value of depth (e.g. 255 in the case of <code>CV_8U</code> data) and $MSE$ is the mean squared error between the two arrays.</p>
+
+<p><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga3119e3ea73010a6f810bb05aa36ac8d6" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

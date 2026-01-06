@@ -1,0 +1,11 @@
+<p>The function <code>cv::eigen</code> calculates eigenvalues only, or both eigenvalues and eigenvectors of a symmetric matrix <code>src</code>:</p>
+
+<div>{{< katex >}}$
+\texttt{src} \cdot \texttt{eigenvectors.row}(i)^T
+= \texttt{eigenvalues.at<srcType>}(i) \cdot \texttt{eigenvectors.row}(i)^T
+${{< /katex >}}</div>
+
+{{< alert context="warning" text="Use eigenNonSymmetric for calculation of real eigenvalues and eigenvectors of non-symmetric matrix." />}}
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga9fa0d58657f60eaa6c71f6fbb40456e3" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

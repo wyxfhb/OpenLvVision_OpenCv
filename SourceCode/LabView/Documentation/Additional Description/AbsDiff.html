@@ -1,0 +1,27 @@
+<p>The function <code>absdiff</code> calculates:</p>
+<ul>
+  <li><strong>Absolute difference between two arrays</strong> (when they have the same size and type):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) =  \texttt{saturate} (| \texttt{src1}(I) -  \texttt{src2}(I)|)
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>Absolute difference between an array and a scalar</strong> (when the second array is constructed from <code>Scalar</code> or has as many elements as the number of channels in <code>src1</code>):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) =  \texttt{saturate} (| \texttt{src1}(I) -  \texttt{src2} |)
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>Absolute difference between a scalar and an array</strong> (when the first array is constructed from <code>Scalar</code> or has as many elements as the number of channels in <code>src2</code>):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) =  \texttt{saturate} (| \texttt{src1} -  \texttt{src2}(I) |)
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>Where <code>I</code> is a multi-dimensional index of array elements. In case of multi-channel arrays, each channel is processed independently.</p>
+
+{{< alert context="warning" text="Saturation is not applied when the arrays have the depth CV_32S. You may even get a negative value in the case of overflow." />}}
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga6fef31bc8c4071cbc114a758a2b79c14" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

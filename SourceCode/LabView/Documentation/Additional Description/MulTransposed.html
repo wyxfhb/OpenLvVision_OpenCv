@@ -1,0 +1,17 @@
+<p>The function <code>cv::mulTransposed</code> computes the product of <code>src</code> and its transpose.  
+Depending on the flag <code>aTa</code>, the result is:</p>
+
+<div>{{< katex >}}$
+\texttt{dst} = \texttt{scale} \cdot (\texttt{src}-\texttt{delta})^T(\texttt{src}-\texttt{delta}), \quad \text{if } aTa = \text{true}
+${{< /katex >}}</div>
+
+<div>{{< katex >}}$
+\texttt{dst} = \texttt{scale} \cdot (\texttt{src}-\texttt{delta})(\texttt{src}-\texttt{delta})^T, \quad \text{otherwise}
+${{< /katex >}}</div>
+
+<p>The function is commonly used for covariance matrix computation.  
+When <code>delta = 0</code>, it can serve as a faster alternative to the general matrix product <code>A * B</code> when <code>B = A'</code>.</p>
+
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gadc4e49f8f7a155044e3be1b9e3b270ab" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

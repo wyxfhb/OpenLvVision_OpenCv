@@ -1,0 +1,20 @@
+<p>The function <code>cv::flip</code> flips the array in one of three different ways (row and column indices are 0-based):</p>
+
+<div>{{< katex >}}$
+\texttt{dst}_{ij} =
+\begin{cases} 
+\texttt{src}_{\texttt{src.rows}-i-1, j} & \text{if } \texttt{flipCode} = 0 \\
+\texttt{src}_{i, \texttt{src.cols}-j-1} & \text{if } \texttt{flipCode} > 0 \\
+\texttt{src}_{\texttt{src.rows}-i-1, \texttt{src.cols}-j-1} & \text{if } \texttt{flipCode} < 0 
+\end{cases}
+${{< /katex >}}</div>
+
+<p>The example scenarios of using the function are the following:</p>
+<ul>
+  <li><strong>Vertical flipping</strong> (<code>flipCode == 0</code>): Used to switch between top-left and bottom-left image origin. This is a typical operation in video processing on Microsoft Windows OS.</li>
+  <li><strong>Horizontal flipping</strong> (<code>flipCode > 0</code>): Used with a subsequent horizontal shift and absolute difference calculation to check for <strong>vertical-axis symmetry</strong>.</li>
+  <li><strong>Simultaneous horizontal and vertical flipping</strong> (<code>flipCode < 0</code>): Used with a subsequent shift and absolute difference calculation to check for <strong>central symmetry</strong>.</li>
+  <li><strong>Reversing point arrays</strong>: The function can also be used to reverse the order of 1D point arrays (using <code>flipCode > 0</code> or <code>flipCode == 0</code>).</li>
+</ul>
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gaca7be533e3dac7feb70fc60635adf441" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

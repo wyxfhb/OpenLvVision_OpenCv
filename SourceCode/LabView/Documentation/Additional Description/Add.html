@@ -1,0 +1,16 @@
+<p>The function add calculates:</p>
+<ul>
+<li><strong>Sum of two arrays</strong> (same size and number of channels):<div>{{< katex >}}$
+\texttt{dst}(I) = \texttt{saturate}(\texttt{src1}(I) + \texttt{src2}(I)) \quad \texttt{if mask}(I) \ne 0
+${{< /katex >}}</div></li>
+<li><strong>Sum of an array and a scalar</strong> (when <code>src2</code> is from Scalar or matches <code>src1.channels()</code>):<div>{{< katex >}}$
+\texttt{dst}(I) = \texttt{saturate}(\texttt{src1}(I) + \texttt{src2}) \quad \texttt{if mask}(I) \ne 0
+${{< /katex >}}</div></li>
+<li><strong>Sum of a scalar and an array</strong> (when <code>src1</code> is from Scalar or matches <code>src2.channels()</code>):<div>{{< katex >}}$
+\texttt{dst}(I) = \texttt{saturate}(\texttt{src1}(I) + \texttt{src2}) \quad \texttt{if mask}(I) \ne 0
+${{< /katex >}}</div></li>
+</ul>
+
+{{< alert context="warning" text="Saturation is not applied when the arrays have the depth CV_32S. You may even get a negative value in the case of overflow." />}}
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga10ac1bfb180e2cfda1701d06c24fdbd6" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

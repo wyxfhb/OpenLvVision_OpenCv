@@ -1,0 +1,12 @@
+<p>The function <code>pow</code> raises every element of the input array to a power:</p>
+<div>{{< katex >}}$
+\texttt{dst}(I) = 
+\begin{cases}
+\texttt{src}(I)^{\texttt{power}} & \text{if } \texttt{power} \text{ is integer} \\
+|\texttt{src}(I)|^{\texttt{power}} & \text{otherwise}
+\end{cases}
+${{< /katex >}}</div>
+<p>So, for a non-integer power exponent, the absolute values of input array elements are used. However, it is possible to get true values for negative values using some extra operations.</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gaf0d056b5bd1dc92500d6f6cf6bac41ef" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

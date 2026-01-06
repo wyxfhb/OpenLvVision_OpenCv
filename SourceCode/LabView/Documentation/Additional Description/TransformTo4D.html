@@ -1,0 +1,17 @@
+<p>The function <code>transform</code> performs the matrix transformation of every element of the array <code>src</code> and stores the results in <code>dst</code>:</p>
+
+<ul>
+  <li>When <code>m.cols == src.channels()</code>:
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{m} \cdot \texttt{src}(I)
+    ${{< /katex >}}</div>
+  </li>
+  <li>When <code>m.cols == src.channels() + 1</code> (using an extra dimension for translation):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{m} \cdot [\texttt{src}(I); 1]
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>Every element of the $N$-channel array <code>src</code> is interpreted as an $N$-element vector that is transformed using the $M \times N$ or $M \times (N+1)$ matrix <code>m</code> to an $M$-element vector — the corresponding element of the output array <code>dst</code>.</p>
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga393164aa54bb9169ce0a8cc44e08ff22" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

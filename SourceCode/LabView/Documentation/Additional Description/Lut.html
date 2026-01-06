@@ -1,0 +1,16 @@
+<p>The function LUT fills the output array with values from the look-up table. Indices of the entries are taken from the input array. That is, the function processes each element of <code>src</code> as follows:</p>
+<div>{{< katex >}}$
+\texttt{dst}(I) \leftarrow \texttt{lut}(\texttt{src}(I) + d)
+${{< /katex >}}</div>
+
+<p>where</p>
+<div>{{< katex >}}$
+d = 
+\begin{cases}
+0 & \text{if } \texttt{src} \text{ has depth } \texttt{CV\_8U} \\
+128 & \text{if } \texttt{src} \text{ has depth } \texttt{CV\_8S}
+\end{cases}
+${{< /katex >}}</div>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gab55b8d062b7f5587720ede032d34156f" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

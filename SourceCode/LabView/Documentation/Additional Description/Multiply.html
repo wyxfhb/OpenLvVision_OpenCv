@@ -1,0 +1,12 @@
+<p>The function <code>multiply</code> calculates the per-element product of two arrays:</p>
+<ul>
+  <li><strong>Element-wise multiplication</strong> with optional scaling:<div>{{< katex >}}$
+  \texttt{dst}(I) = \texttt{saturate}(\texttt{scale} \cdot \texttt{src1}(I) \cdot \texttt{src2}(I))
+  ${{< /katex >}}</div></li>
+</ul>
+
+<p>Where <code>I</code> is the multi-dimensional index of array elements. Each channel is processed independently in multi-channel arrays.</p>
+
+{{< alert context="warning" text="Saturation is not applied when the arrays have the depth CV_32S. You may even get a negative value in the case of overflow." />}}
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga979d898a58d7f61c53003e162e7ad89f" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

@@ -1,0 +1,17 @@
+<p>The function normalize normalizes, scales, and shifts the input array elements so that:</p>
+<ul>
+  <li>When <code>normType = NORM_INF</code>, <code>NORM_L1</code>, or <code>NORM_L2</code> (where <em>p</em> = ∞, 1, or 2 respectively):
+    <div>{{< katex >}}$
+    \| \texttt{dst} \|_{L_p} = \texttt{alpha}
+    ${{< /katex >}}</div>
+  </li>
+
+  <li>Or, so that:
+    <div>{{< katex >}}$
+    \min_I \texttt{dst}(I) = \texttt{alpha}, \quad \max_I \texttt{dst}(I) = \texttt{beta}
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga87eef7ee3970f86906d69a92cbf064bd" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

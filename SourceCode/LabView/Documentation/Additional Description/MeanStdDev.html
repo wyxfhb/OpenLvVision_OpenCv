@@ -1,0 +1,11 @@
+<p>The function meanStdDev calculates the mean and the standard deviation of array elements independently for each channel and returns them via the output parameters:</p>
+<div>{{< katex >}}$
+\begin{array}{l}
+N = \sum\limits_{I, \ \texttt{mask}(I) \ne 0} 1 \\
+\texttt{mean}_c = \frac{\sum\limits_{I : \ \texttt{mask}(I) \ne 0} \texttt{src}(I)_c}{N} \\
+\texttt{stddev}_c = \sqrt{\frac{\sum\limits_{I : \ \texttt{mask}(I) \ne 0} \left( \texttt{src}(I)_c - \texttt{mean}_c \right)^2}{N}}
+\end{array}
+${{< /katex >}}</div>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga846c858f4004d59493d7c6a4354b301d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

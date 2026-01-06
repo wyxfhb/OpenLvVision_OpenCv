@@ -1,0 +1,30 @@
+<p>The function cv::dft performs one of the following:</p>
+<ul>
+  <li><strong>Inverse Fourier transform of a 1D vector of N elements:</strong>
+    <div>{{< katex >}}$
+    \begin{aligned}
+    X' &= (F^{(N)})^{-1} \cdot Y = (F^{(N)})^* \cdot Y \\
+    X &= \frac{1}{N} \cdot X'
+    \end{aligned}
+    ${{< /katex >}}</div>
+
+    <p>where</p>
+
+    <div>{{< katex >}}$
+    F^{(N)*} = \left( \mathrm{Re}(F^{(N)}) - \mathrm{Im}(F^{(N)}) \right)^{T}
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>Inverse Fourier transform of an $M \times N$ matrix:</strong>
+    <div>{{< katex >}}$
+    \begin{aligned}
+    X' &= (F^{(M)})^* \cdot Y \cdot (F^{(N)})^* \\
+    X &= \frac{1}{M \cdot N} \cdot X'
+    \end{aligned}
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gaa708aa2d2e57a508f968eb0f69aa5ff1" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

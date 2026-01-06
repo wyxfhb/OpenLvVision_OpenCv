@@ -1,0 +1,8 @@
+<p>The function <code>Mahalanobis</code> calculates and returns the weighted distance between two vectors:</p>
+<div>{{< katex >}}$
+d(\texttt{vec1}, \texttt{vec2}) = \sqrt{\sum_{i,j} \texttt{icovar}(i,j) \cdot (\texttt{vec1}(i) - \texttt{vec2}(i)) \cdot (\texttt{vec1}(j) - \texttt{vec2}(j))}
+${{< /katex >}}</div>
+
+<p>The covariance matrix may be calculated using the <code>calcCovarMatrix</code> function and then inverted using the <code>invert</code> function (preferably using the <code>DECOMP_SVD</code> method, as the most accurate).</p>
+
+<p><a href="https://docs.opencv.org/4.x/d2/de8/group__core__array.html#ga4493aee129179459cbfc6064f051aa7d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

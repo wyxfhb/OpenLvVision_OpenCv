@@ -1,0 +1,11 @@
+<p>The function phase calculates the rotation angle of each 2D vector formed from the corresponding elements of <code>x</code> and <code>y</code>:</p>
+
+<div>{{< katex >}}$
+\texttt{angle}(I) = \texttt{atan2}\!\big(\texttt{y}(I),\, \texttt{x}(I)\big)
+${{< /katex >}}</div>
+
+<p>The angle estimation accuracy is about 0.3 degrees.  
+When <code>x(I) = 0</code> and <code>y(I) = 0</code>, the corresponding <code>angle(I)</code> is set to 0.</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga9db9ca9b4d81c3bde5677b8f64dc0137" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

@@ -1,0 +1,21 @@
+<p>The function <code>gemm</code> performs generalized matrix multiplication:</p>
+<ul>
+  <li><strong>Generalized Matrix Multiplication</strong>:
+    <div>{{< katex >}}$
+    \texttt{dst} = \texttt{alpha} \cdot \texttt{src1} \cdot \texttt{src2} + \texttt{beta} \cdot \texttt{src3}
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>Where <code>op(X)</code> is <code>X</code> or <code>X^T</code> (transpose of X), depending on the flags:</p>
+<ul>
+    <li><code>GEMM_1_T</code>: Transpose <code>src1</code></li>
+    <li><code>GEMM_2_T</code>: Transpose <code>src2</code></li>
+    <li><code>GEMM_3_T</code>: Transpose <code>src3</code></li>
+</ul>
+
+<p>The function can be replaced with a matrix expression:</p>
+<pre><code>dst = alpha * src1 * src2 + beta * src3; // (or using .t() for transposition)
+</code></pre>
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gacb6e64071dffe36434e1e7ee79e7cb35" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

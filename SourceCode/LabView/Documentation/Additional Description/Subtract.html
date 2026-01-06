@@ -1,0 +1,23 @@
+<p>The function <code>subtract</code> calculates:</p>
+<ul>
+  <li><strong>Difference between two arrays</strong> (when both input arrays have the same size and the same number of channels):<div>{{< katex >}}$
+  \texttt{dst}(I) =  \texttt{saturate}(\texttt{src1}(I) - \texttt{src2}(I)) \quad \texttt{if mask}(I) \ne 0
+  ${{< /katex >}}</div></li>
+
+  <li><strong>Difference between an array and a scalar</strong> (when <code>src2</code> is constructed from <code>Scalar</code> or has the same number of elements as <code>src1.channels()</code>):<div>{{< katex >}}$
+  \texttt{dst}(I) =  \texttt{saturate}(\texttt{src1}(I) - \texttt{src2}) \quad \texttt{if mask}(I) \ne 0
+  ${{< /katex >}}</div></li>
+
+  <li><strong>Difference between a scalar and an array</strong> (when <code>src1</code> is constructed from <code>Scalar</code> or has the same number of elements as <code>src2.channels()</code>):<div>{{< katex >}}$
+  \texttt{dst}(I) =  \texttt{saturate}(\texttt{src1} - \texttt{src2}(I)) \quad \texttt{if mask}(I) \ne 0
+  ${{< /katex >}}</div></li>
+
+  <li><strong>Reverse difference (SubRS variant) between a scalar and an array</strong>:<div>{{< katex >}}$
+  \texttt{dst}(I) =  \texttt{saturate}(\texttt{src2} - \texttt{src1}(I)) \quad \texttt{if mask}(I) \ne 0
+  ${{< /katex >}}</div></li>
+</ul>
+<p>Where <code>I</code> is a multi-dimensional index of array elements. In case of multi-channel arrays, each channel is processed independently.</p>
+
+{{< alert context="warning" text="Saturation is not applied when the arrays have the depth CV_32S. You may even get a negative value in the case of overflow." />}}
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gaa0f00d98b4b5edeaeb7b8333b2de353b" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

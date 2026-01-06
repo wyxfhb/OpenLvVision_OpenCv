@@ -1,0 +1,33 @@
+<p>The function <code>cv::dct</code> performs inverse discrete Cosine transform (DCT) of a 1D or 2D floating-point array:</p>
+
+<ul>
+
+  <li><strong>Inverse Cosine transform of a 1D vector of N elements:</strong>
+    <div>{{< katex >}}$
+    X = \left(C^{(N)}\right)^{-1} \cdot Y
+      = \left(C^{(N)}\right)^T \cdot Y
+    ${{< /katex >}}</div>
+
+    <p>(since $C^{(N)}$ is an orthogonal matrix, $C^{(N)} \cdot (C^{(N)})^T = I$)</p>
+  </li>
+
+
+  <li><strong>Inverse 2D Cosine transform of an $M \times N$ matrix:</strong>
+    <div>{{< katex >}}$
+    X = \left(C^{(N)}\right)^T \cdot X \cdot C^{(N)}
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>The function chooses the mode of operation by checking the flags and the size of the input array:</p>
+
+<ul>
+   <li>If <code>(flags &amp; DCT_ROWS) != 0</code>, the function performs a 1D transform of each row.</li>
+  <li>If the array is a single row or a single column, the function performs a 1D transform.</li>
+  <li>Otherwise, a 2D transform is performed.</li>
+</ul>
+
+{{< alert context="warning" text="Currently dct supports even-size arrays (2, 4, 6 ...). For data analysis and approximation, you can pad the array when necessary. Also, the function performance depends very much, and not monotonically, on the array size (see getOptimalDFTSize ). In the current implementation DCT of a vector of size N is calculated via DFT of a vector of size N/2" />}}
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga77b168d84e564c50228b69730a227ef2" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

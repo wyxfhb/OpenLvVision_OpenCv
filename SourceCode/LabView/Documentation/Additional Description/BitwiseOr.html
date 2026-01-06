@@ -1,0 +1,24 @@
+<p>The function bitwiseOr calculates the per-element bit-wise logical disjunction for:</p>
+<ul>
+  <li><strong>Two arrays</strong> (when <code>src1</code> and <code>src2</code> have the same size):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{src1}(I) \vee \texttt{src2}(I) \quad \texttt{if mask}(I) \ne 0
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>An array and a scalar</strong> (when <code>src2</code> is constructed from <code>Scalar</code> or has the same number of elements as <code>src1.channels()</code>):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{src1}(I) \vee \texttt{src2} \quad \texttt{if mask}(I) \ne 0
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>A scalar and an array</strong> (when <code>src1</code> is constructed from <code>Scalar</code> or has the same number of elements as <code>src2.channels()</code>):
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{src1} \vee \texttt{src2}(I) \quad \texttt{if mask}(I) \ne 0
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+<p>In case of floating-point arrays, their machine-specific bit representations (usually IEEE754-compliant) are used for the operation. In case of multi-channel arrays, each channel is processed independently. In the second and third cases above, the scalar is first converted to the array type.</p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gab85523db362a4e26ff0c703793a719b4" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

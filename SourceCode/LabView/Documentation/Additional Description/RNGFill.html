@@ -1,0 +1,4 @@
+<p>Each of the methods fills the matrix with the random values from the specified distribution. As the new numbers are generated, the RNG state is updated accordingly. In case of multiple-channel images, every channel is filled independently, which means that RNG cannot generate samples from the multi-dimensional Gaussian distribution with non-diagonal covariance matrix directly. To do that, the method generates samples from multi-dimensional standard Gaussian distribution with zero mean and identity covariation matrix, and then transforms them using transform to get samples from the specified Gaussian distribution. </p>
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d1/dd6/classcv_1_1RNG.html#ad26f2b09d9868cf108e84c9814aa682d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

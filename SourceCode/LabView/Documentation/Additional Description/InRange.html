@@ -1,0 +1,27 @@
+<p>The function checks the range as follows:</p>
+
+<ul>
+  <li><strong>For every element of a single-channel input array:</strong>
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = \texttt{lowerb}(I)_0 \leq \texttt{src}(I)_0 \leq \texttt{upperb}(I)_0
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>For two-channel arrays:</strong>
+    <div>{{< katex >}}$
+    \texttt{dst}(I) = 
+    \texttt{lowerb}(I)_0 \leq \texttt{src}(I)_0 \leq \texttt{upperb}(I)_0 \land
+    \texttt{lowerb}(I)_1 \leq \texttt{src}(I)_1 \leq \texttt{upperb}(I)_1
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>And so forth.</strong></li>
+</ul>
+
+<p>That is, <code>dst(I)</code> is set to 255 (all 1-bits) if <code>src(I)</code> is within the specified 1D, 2D, 3D, ... box, and 0 otherwise.</p>
+
+<p>When the lower and/or upper boundary parameters are scalars, the indices <code>(I)</code> at <code>lowerb</code> and <code>upperb</code> in the above formulas should be omitted.</p>
+
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga48af0ab51e36436c5d04340e036ce981" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

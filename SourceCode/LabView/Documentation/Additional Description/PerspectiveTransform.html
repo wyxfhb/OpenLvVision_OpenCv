@@ -1,0 +1,24 @@
+<p>The function <code>cv::perspectiveTransform</code> transforms every element of <code>src</code> by treating it as a 2D or 3D vector, in the following way:</p>
+
+<div>{{< katex >}}$
+(x, y, z) \rightarrow (x'/w, y'/w, z'/w)
+${{< /katex >}}</div>
+
+<p>where the intermediate 4D vector is calculated as:</p>
+
+<div>{{< katex >}}$
+(x', y', z', w') = \texttt{mat} \cdot \begin{bmatrix} x \\ y \\ z \\ 1 \end{bmatrix}
+${{< /katex >}}</div>
+
+<p>and the scale factor $w$ is defined as:</p>
+
+<div>{{< katex >}}$
+w = \begin{cases} w' & \text{if } w' \neq 0 \\ \infty & \text{otherwise} \end{cases}
+${{< /katex >}}</div>
+
+<p>In the case of 2D vector transformation $(x, y)$, the $z$ component is omitted and the matrix <code>mat</code> is typically $3 \times 3$ or $4 \times 4$. The function is commonly used for warping images or projecting 3D points onto a 2D plane with perspective distortion.</p>
+
+
+{{< alert context="warning" text="The function transforms a sparse set of 2D or 3D vectors. If you want to transform an image using perspective transformation, use warpPerspective . If you have an inverse problem, that is, you want to compute the most probable perspective transformation out of several pairs of corresponding points, you can use getPerspectiveTransform or findHomography . " />}}
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#gad327659ac03e5fd6894b90025e6900a7" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

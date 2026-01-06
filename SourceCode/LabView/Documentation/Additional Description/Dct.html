@@ -1,0 +1,54 @@
+<p>The function <code>cv::dct</code> performs a forward or inverse discrete Cosine transform (DCT) of a 1D or 2D floating-point array:</p>
+
+<ul>
+  <li><strong>Forward Cosine transform of a 1D vector of N elements:</strong>
+    <div>{{< katex >}}$
+    Y = C^{(N)} \cdot X
+    ${{< /katex >}}</div>
+
+    <p>where</p>
+
+    <div>{{< katex >}}$
+    C^{(N)}_{jk}
+    = \sqrt{\alpha_j / N}\,
+    \cos\!\left(\frac{\pi(2k+1)j}{2N}\right)
+    ${{< /katex >}}</div>
+
+    <p>and $\alpha_0 = 1$, $\alpha_j = 2$ for $j > 0$.</p>
+  </li>
+
+  <li><strong>Inverse Cosine transform of a 1D vector of N elements:</strong>
+    <div>{{< katex >}}$
+    X = \left(C^{(N)}\right)^{-1} \cdot Y
+      = \left(C^{(N)}\right)^T \cdot Y
+    ${{< /katex >}}</div>
+
+    <p>(since $C^{(N)}$ is an orthogonal matrix, $C^{(N)} \cdot (C^{(N)})^T = I$)</p>
+  </li>
+
+  <li><strong>Forward 2D Cosine transform of an $M \times N$ matrix:</strong>
+    <div>{{< katex >}}$
+    Y = C^{(N)} \cdot X \cdot \left(C^{(N)}\right)^T
+    ${{< /katex >}}</div>
+  </li>
+
+  <li><strong>Inverse 2D Cosine transform of an $M \times N$ matrix:</strong>
+    <div>{{< katex >}}$
+    X = \left(C^{(N)}\right)^T \cdot X \cdot C^{(N)}
+    ${{< /katex >}}</div>
+  </li>
+</ul>
+
+<p>The function chooses the mode of operation by checking the flags and the size of the input array:</p>
+
+<ul>
+  <li>If <code>(flags &amp; DCT_INVERSE) == 0</code>, a forward 1D or 2D transform is performed; otherwise, an inverse transform.</li>
+  <li>If <code>(flags &amp; DCT_ROWS) != 0</code>, the function performs a 1D transform of each row.</li>
+  <li>If the array is a single row or a single column, the function performs a 1D transform.</li>
+  <li>Otherwise, a 2D transform is performed.</li>
+</ul>
+
+{{< alert context="warning" text="Currently dct supports even-size arrays (2, 4, 6 ...). For data analysis and approximation, you can pad the array when necessary. Also, the function performance depends very much, and not monotonically, on the array size (see getOptimalDFTSize ). In the current implementation DCT of a vector of size N is calculated via DFT of a vector of size N/2" />}}
+
+<p><a
+href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga85aad4d668c01fbd64825f589e3696d4" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>

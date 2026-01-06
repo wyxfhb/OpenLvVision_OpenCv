@@ -1,0 +1,9 @@
+<p>The function <code>cv::repeat</code> duplicates the input array one or more times along each of the two axes:</p>
+
+<div>{{< katex >}}$
+\texttt{dst}_{ij} = \texttt{src}_{i \bmod \texttt{src.rows}, \; j \bmod \texttt{src.cols}}
+${{< /katex >}}</div>
+
+<p>The second variant of the function is more convenient to use with <code>MatrixExpressions</code>, allowing you to create tiled matrices within a single line of code.</p>
+
+<p><a href="https://docs.opencv.org/4.11.0/d2/de8/group__core__array.html#ga496c3860f3ac44c40b48811333cfda2d" target="_blank">For detailed information, please refer to the OpenCV documentation</a></p>
