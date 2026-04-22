@@ -52,6 +52,21 @@
     <Filter Include="CV-Modules\ImageProcessing\ObjectDetection">
       <UniqueIdentifier>{dbcf028e-ab60-4283-b1b3-5601ca11b878}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CV-Modules\ImageProcessing\GeometricImageTransformations">
+      <UniqueIdentifier>{763f8ef0-57fb-4e02-b3f9-527384292f2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\DNN">
+      <UniqueIdentifier>{c9b82968-83de-4677-bbb4-4a4eae5d9396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\DNN\Net">
+      <UniqueIdentifier>{d76b55e7-a08a-44e5-bdf9-0e4ca3d3b81d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\Cuda">
+      <UniqueIdentifier>{8b1fe201-e79e-45d7-b5f0-072357f9541f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CV-Modules\DNN\Blob">
+      <UniqueIdentifier>{613b98cb-f485-4c0d-aa2c-9efbafbbc9f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\DLL\framework.h">
@@ -111,6 +126,21 @@
     <ClInclude Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.h">
       <Filter>CV-Modules\ImageProcessing\ObjectDetection</Filter>
     </ClInclude>
+    <ClInclude Include="Src\CV-Modules\ImageProcessing\GeometricImageTransformations\GeometricImageTransformations.h">
+      <Filter>CV-Modules\ImageProcessing\GeometricImageTransformations</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\DNN\DNN.h">
+      <Filter>CV-Modules\DNN</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Interorp\ArrayHandling\Array4D.hpp">
+      <Filter>Interorp\ArrayHandling</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\DNN\Blob\Blob.h">
+      <Filter>CV-Modules\DNN\Blob</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\CV-Modules\DNN\Net\Net.h">
+      <Filter>CV-Modules\DNN\Net</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\DLL\dllmain.cpp">
@@ -151,6 +181,18 @@
     </ClCompile>
     <ClCompile Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.cpp">
       <Filter>CV-Modules\ImageProcessing\ObjectDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\ImageProcessing\GeometricImageTransformations\GeometricImageTransformations.cpp">
+      <Filter>CV-Modules\ImageProcessing\GeometricImageTransformations</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\DNN\DNN.cpp">
+      <Filter>CV-Modules\DNN</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\DNN\Net\Net.cpp">
+      <Filter>CV-Modules\DNN\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\CV-Modules\DNN\Blob\Blob.cpp">
+      <Filter>CV-Modules\DNN\Blob</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

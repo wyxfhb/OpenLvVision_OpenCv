@@ -1,7 +1,8 @@
 #include "MatHandling.h"
 
-using namespace lvi::mat;
 using namespace cv;
+using namespace lvi::mat;
+
 
 Mat lvi::mat::lvMatToCvMat(void* address, MatInfo* matInfo)
 {
@@ -94,6 +95,44 @@ Mat lvi::mat::lvMatToCvMat(void* address, MatInfo* matInfo)
         return Mat(height, width, CV_32FC4, reinterpret_cast<float*>(address));
     case DataType::Array1d_4dPointDBL:
         return Mat(height, width, CV_64FC4, reinterpret_cast<double*>(address));
+    default:
+        throw std::runtime_error("Format not supported in lvMatToCvMat");
+    }
+}
+
+cv::Mat lvi::mat::lvNchwMatToCvNchwMat(void* address, NchwMatInfo* matInfo)
+{
+    if (matInfo->null == 1)
+    {       	
+        throw std::runtime_error("NchwMat is null");
+    }
+
+	int sizes[] = {matInfo->dimensions, matInfo->channels, matInfo->height, matInfo->width};
+
+    switch (matInfo->datatype)
+    {
+	case lvi::mat::DataType::ArrayNchwU8:
+        return Mat(4, sizes, CV_8U, reinterpret_cast<uint8_t*>(address));
+    case lvi::mat::DataType::ArrayNchwI8:
+        return Mat(4, sizes, CV_8S, reinterpret_cast<int8_t*>(address));
+    case lvi::mat::DataType::ArrayNchwU16:
+        return Mat(4, sizes, CV_16U, reinterpret_cast<uint16_t*>(address));
+    case lvi::mat::DataType::ArrayNchwI16:
+        return Mat(4, sizes, CV_16S, reinterpret_cast<int16_t*>(address));
+    case lvi::mat::DataType::ArrayNchwU32_Color:
+        return Mat(4, sizes, CV_8SC4, reinterpret_cast<uint32_t*>(address));
+    case lvi::mat::DataType::ArrayNchwI32:
+        return Mat(4, sizes, CV_32S, reinterpret_cast<int32_t*>(address));
+    case lvi::mat::DataType::ArrayNchwU64_Color:
+        return Mat(4, sizes, CV_16SC4, reinterpret_cast<uint32_t*>(address));
+    case lvi::mat::DataType::ArrayNchwSgl:
+        return Mat(4, sizes, CV_32F, reinterpret_cast<float*>(address));
+    case lvi::mat::DataType::ArrayNchwDbl:
+        return Mat(4, sizes, CV_64F, reinterpret_cast<double*>(address));
+    case lvi::mat::DataType::ArrayNchwComplexSgl:
+        return Mat(4, sizes, CV_32FC2, reinterpret_cast<float*>(address));
+    case lvi::mat::DataType::ArrayNchwComplexDbl:
+        return Mat(4, sizes, CV_64FC2, reinterpret_cast<double*>(address));
     default:
         throw std::runtime_error("Format not supported in lvMatToCvMat");
     }

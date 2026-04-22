@@ -42,7 +42,8 @@ _declspec(dllexport) void CV_CORE_Add(ErrorClusterPtr errorCluster,
 	LV_1DArrayHandle<double_t> constantHandle,
 	void* addressMask, MatInfo* matInfoMask)
 {
-	handleError(errorCluster, [&]() -> MgErr {
+	handleError(errorCluster, [&]() -> MgErr 
+{
 		Mat src1 = lvMatToCvMat(addressSrc1, matInfoSrc1);
 		Mat src2 = lvMatToCvMat(addressSrc2, matInfoSrc2);
 		Mat dst = lvDstMatToCvMat(src1, addressDst, matInfoDst);

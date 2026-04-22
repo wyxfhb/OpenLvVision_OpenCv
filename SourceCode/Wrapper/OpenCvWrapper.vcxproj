@@ -137,8 +137,7 @@ xcopy "$(SolutionDir)..\OpenCv\deps_Win32\OpenBLAS\bin\libopenblas.dll" "$(Solut
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>xcopy "$(SolutionDir)Release\OlvOpenCvWrapper.dll" "$(SolutionDir)..\LabView\OpenLvVision_OpenCv\Dlls" /c /y
-xcopy "$(SolutionDir)..\OpenCv\Build_OpenCvWorld_x86\install\x86\vc17\bin\opencv_world4110.dll" "$(SolutionDir)..\LabView\OpenLvVision_OpenCv\Dlls"  /c /y
-xcopy "$(SolutionDir)..\OpenCv\deps_Win32\OpenBLAS\bin\libopenblas.dll" "$(SolutionDir)..\LabView\OpenLvVision_OpenCv\Dlls"  /c /y</Command>
+xcopy "$(SolutionDir)..\OpenCv\Build_OpenCvWorld_x86\install\x86\vc17\bin\opencv_world4130.dll" "$(SolutionDir)..\LabView\OpenLvVision_OpenCv\Dlls"  /c /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -193,10 +192,7 @@ xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(Solutio
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)x64\Release\OlvOpenCvWrapper.dll" "$(SolutionDir)..\LabView\OpenLvVision_OpenCv\Dlls" /c /y
-xcopy "$(SolutionDir)..\OpenCv\Build_OpenCvWorld_x64\install\x64\vc17\bin\opencv_world4110.dll" "$(SolutionDir)..\LabView\OpenLvVision_OpenCv\Dlls"  /c /y
-xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(SolutionDir)..\LabView\OpenLvVision_OpenCv\Dlls"  /c /y
-</Command>
+      <Command>xcopy "$(SolutionDir)x64\Release\OlvOpenCvWrapper.dll" "$(SolutionDir)..\LabView\OpenLvVision_OpenCv\Dlls\" /c /y /i</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -205,6 +201,10 @@ xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(Solutio
     <ClInclude Include="Src\CV-Modules\CoreFunctionality\PCA\PCA.h" />
     <ClInclude Include="Src\CV-Modules\CoreFunctionality\RNG\RNG.h" />
     <ClInclude Include="Src\CV-Modules\CoreFunctionality\SVD\SVD.h" />
+    <ClInclude Include="Src\CV-Modules\DNN\Blob\Blob.h" />
+    <ClInclude Include="Src\CV-Modules\DNN\DNN.h" />
+    <ClInclude Include="Src\CV-Modules\DNN\Net\Net.h" />
+    <ClInclude Include="Src\CV-Modules\ImageProcessing\GeometricImageTransformations\GeometricImageTransformations.h" />
     <ClInclude Include="Src\CV-Modules\ImageProcessing\ImageFiltering\ImageFiltering.h" />
     <ClInclude Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.h" />
     <ClInclude Include="Src\CV-Modules\System\System.h" />
@@ -212,6 +212,7 @@ xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(Solutio
     <ClInclude Include="Src\DLL\pch.h" />
     <ClInclude Include="Src\Interorp\ArrayHandling\Array1D.hpp" />
     <ClInclude Include="Src\Interorp\ArrayHandling\Array2D.hpp" />
+    <ClInclude Include="Src\Interorp\ArrayHandling\Array4D.hpp" />
     <ClInclude Include="Src\Interorp\ArrayHandling\ArrayTypes.h" />
     <ClInclude Include="Src\Interorp\Edvr\EdvrObject.hpp" />
     <ClInclude Include="Src\Interorp\Edvr\EdvrTypes.h" />
@@ -226,6 +227,10 @@ xcopy "$(SolutionDir)..\OpenCv\deps_x64\OpenBLAS\bin\libopenblas.dll" "$(Solutio
     <ClCompile Include="Src\CV-Modules\CoreFunctionality\PCA\PCA.cpp" />
     <ClCompile Include="Src\CV-Modules\CoreFunctionality\RNG\RNG.cpp" />
     <ClCompile Include="Src\CV-Modules\CoreFunctionality\SVD\SVD.cpp" />
+    <ClCompile Include="Src\CV-Modules\DNN\Blob\Blob.cpp" />
+    <ClCompile Include="Src\CV-Modules\DNN\DNN.cpp" />
+    <ClCompile Include="Src\CV-Modules\DNN\Net\Net.cpp" />
+    <ClCompile Include="Src\CV-Modules\ImageProcessing\GeometricImageTransformations\GeometricImageTransformations.cpp" />
     <ClCompile Include="Src\CV-Modules\ImageProcessing\ImageFiltering\ImageFiltering.cpp" />
     <ClCompile Include="Src\CV-Modules\ImageProcessing\ObjectDetection\ObjectDetection.cpp" />
     <ClCompile Include="Src\CV-Modules\System\System.cpp" />

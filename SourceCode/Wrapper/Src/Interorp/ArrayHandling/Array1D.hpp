@@ -21,6 +21,16 @@ namespace lvi
         private:
             LV_1DArrayHandle<T> m_handle;
 
+            static constexpr size_t getHeaderSize()
+            {
+                size_t headerSize = sizeof(int32_t);
+                size_t alignment = alignof(T);
+                if (headerSize % alignment != 0) {
+                    headerSize += alignment - (headerSize % alignment);
+                }
+                return headerSize;
+            }
+
         public:
             /**
              * @brief Constructs the wrapper from a LabVIEW handle.
@@ -42,29 +52,72 @@ namespace lvi
                     }
                     (*m_handle)->dimSize = 0; // Initialize size to 0
                 }
-            }
+            }            
 
             /**
              * @brief Resizes the LabVIEW array to hold newElementCount elements.
+             * Handles both primitive types and LabVIEW pointers (like LStrHandle).
              * @param newElementCount The number of elements (T) the array should hold.
-             * @return MgErr (mgNoErr on success, mFullErr on memory failure).
+             * @return MgErr (mgNoErr on success).
              */
             MgErr resize(int32_t newElementCount)
             {
-                //: 4-byte header
-                size_t neededSize = 4 + (newElementCount * sizeof(T));
+                int32_t oldElementCount = (*m_handle)->dimSize;
 
+                // If sizes match, do nothing
+                if (newElementCount == oldElementCount)
+                {
+                    return mgNoErr;
+                }
+
+                // If SHRINKING an array of handles (like LStrHandle), dispose of the dropped handles
+                if constexpr (std::is_pointer_v<T>)
+                {
+                    if (newElementCount < oldElementCount)
+                    {
+                        for (int32_t i = newElementCount; i < oldElementCount; i++)
+                        {
+                            if ((*m_handle)->data[i] != nullptr)
+                            {
+                                DSDisposeHandle(reinterpret_cast<UHandle>((*m_handle)->data[i]));
+                                (*m_handle)->data[i] = nullptr;
+                            }
+                        }
+                    }
+                }
+
+                // Resize
+                size_t neededSize = getHeaderSize() + (newElementCount * sizeof(T));
                 MgErr err = DSSetHandleSize(reinterpret_cast<UHandle>(m_handle), neededSize);
                 if (err != mgNoErr)
                 {
                     return err;
                 }
 
-                if (*m_handle)
+                // If GROWING, initialize the new memory
+                if (newElementCount > oldElementCount)
                 {
-                    (*m_handle)->dimSize = newElementCount;
+                    if constexpr (std::is_pointer_v<T>)
+                    {
+                        // For handles, allocate empty LabVIEW strings to prevent nullptr crashes
+                        for (int32_t i = oldElementCount; i < newElementCount; i++)
+                        {
+                            UHandle newH = DSNewHandle(sizeof(int32_t));
+                            if (newH)
+                            {
+                                *reinterpret_cast<int32_t*>(*newH) = 0;
+                            }
+                            (*m_handle)->data[i] = reinterpret_cast<T>(newH);
+                        }
+                    }
+                    else
+                    {
+                        // For primitives (double, int), safe to zero out the memory.
+                        std::memset((*m_handle)->data + oldElementCount, 0, (newElementCount - oldElementCount) * sizeof(T));
+                    }
                 }
 
+                (*m_handle)->dimSize = newElementCount;
                 return mgNoErr;
             }
 
@@ -95,6 +148,21 @@ namespace lvi
             }
 
             /**
+             * @brief Copies the LV array contents into a std::vector.
+             * Only valid for trivially copyable types.
+             * @return A std::vector<T> containing a copy of the array data.
+             */
+            std::vector<T> toVector() const
+            {
+                static_assert(std::is_trivially_copyable_v<T>,
+                    "toVector() only supports trivially copyable types.");
+
+                int32_t n = (*m_handle)->dimSize;
+                if (n <= 0) return {};
+                return std::vector<T>((*m_handle)->data, (*m_handle)->data + n);
+            }
+
+            /**
              * @brief Automatically resizes the LV array and copies data from a std::vector.
              * @param vec The source vector to copy from.
              * @return MgErr (mgNoErr on success).
@@ -116,6 +184,34 @@ namespace lvi
                 {
                     std::memcpy(data(), vec.data(), numElements * sizeof(T));
                 }
+                return mgNoErr;
+            }
+
+            /**
+             * @brief Copies data from a vector of vectors into a LV array-of-arrays.
+             * Only valid when T is itself a LV_1DArrayHandle (i.e. Array1D<LV_1DArrayHandle<U>>).
+             * Automatically resizes the outer array and copies each inner vector into its sub-array.
+             * @tparam U The element type of the inner vectors.
+             * @param vecs The source vector of vectors to copy from.
+             * @return MgErr (mgNoErr on success).
+             */
+            template <typename U>
+            MgErr copyFrom(const std::vector<std::vector<U>>& vecs)
+            {
+                static_assert(std::is_same_v<T, LV_1DArray<U>**>,
+                    "copyFrom(vector<vector<U>>) is only valid for Array1D<LV_1DArrayHandle<U>>.");
+
+                int32_t outerCount = static_cast<int32_t>(vecs.size());
+                MgErr err = resize(outerCount);
+                if (err != mgNoErr) return err;
+
+                for (int32_t i = 0; i < outerCount; i++)
+                {
+                    Array1D<U> inner((*m_handle)->data[i]);
+                    err = inner.copyFrom(vecs[i]);
+                    if (err != mgNoErr) return err;
+                }
+
                 return mgNoErr;
             }
 
@@ -169,7 +265,7 @@ namespace lvi
                 return mgNoErr;
             }
 
-            /**
+             /**
              * @brief Automatically resizes the LV array to 4 elements
              * and copies data from a cv::Scalar.
              * @brief This function is only valid for Array1D<double>.

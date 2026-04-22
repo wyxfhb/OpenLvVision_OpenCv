@@ -26,6 +26,13 @@ namespace lvi
             T data[1];
         };
 
+        template <typename T>
+        struct LV_4DArray
+        {
+            int32_t dimSizes[4]; // [0] = N, [1] = C, [2] = H, [3] = W
+            T data[1];
+        };
+
         #ifdef LV_PACKING_SET
             #pragma pack(pop)
             #undef LV_PACKING_SET
@@ -36,6 +43,9 @@ namespace lvi
 
         template <typename T>
         using LV_2DArrayHandle = LV_2DArray<T>**;
+
+        template <typename T>
+        using LV_4DArrayHandle = LV_4DArray<T>**;
 
     } // namespace array
 } // namespace lvi

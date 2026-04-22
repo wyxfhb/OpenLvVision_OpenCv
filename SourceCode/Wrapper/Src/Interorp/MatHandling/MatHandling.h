@@ -12,6 +12,12 @@ namespace lvi
      */
     namespace mat
     {
+        //WIN32 packing
+        #if defined(_WIN32) && !defined(_WIN64)
+            #pragma pack(push, 1) 
+            #define LV_PACKING_SET 1
+        #endif
+
         /**
          * @brief Enum for LabVIEW data types passed to C++.
          */
@@ -71,7 +77,18 @@ namespace lvi
             Array1d_3dPointDBL = 51,
             Array1d_4dPointI32 = 52,
             Array1d_4dPointSGL = 53,
-            Array1d_4dPointDBL = 54
+            Array1d_4dPointDBL = 54,
+			ArrayNchwU8 = 55,
+			ArrayNchwI8 = 56,
+			ArrayNchwU16 = 57,
+			ArrayNchwI16 = 58,
+			ArrayNchwU32_Color = 59,
+			ArrayNchwI32 = 60,
+			ArrayNchwU64_Color = 61,
+			ArrayNchwSgl = 62,
+			ArrayNchwDbl = 63,
+			ArrayNchwComplexSgl = 64,
+			ArrayNchwComplexDbl = 65,
         };
 
         /**
@@ -87,10 +104,33 @@ namespace lvi
             uint8_t null; // Flag to indicate if the LV array/image is empty
         };
 
+        /**
+         * @brief Struct to pass ncwh array info from LabVIEW.
+         */
+        struct NchwMatInfo
+        {
+            DataType datatype;
+            int32_t dimensions;
+            int32_t channels;
+            int32_t height;
+            int32_t width;
+            uint8_t null; 
+        };
+
+        #ifdef LV_PACKING_SET
+            #pragma pack(pop)
+            #undef LV_PACKING_SET
+        #endif
+
          /**
-         * @brief Creates a cv::Mat header for LabVIEW image data without copying.
+         * @brief Creates a cv::Mat header for LabVIEW image data without copying.e
          */
         cv::Mat lvMatToCvMat(void* address, MatInfo* matInfo);
+
+        /**
+        * @brief Creates a cv::Mat header for LabVIEW nchw data without copying.
+        */
+        cv::Mat lvNchwMatToCvNchwMat(void* address, NchwMatInfo* matInfo);
 
         /**
          * @brief Selects either the source or destination Mat based on LV info.

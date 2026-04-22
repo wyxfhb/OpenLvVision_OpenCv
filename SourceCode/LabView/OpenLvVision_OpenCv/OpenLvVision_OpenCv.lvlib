@@ -9,44 +9,56 @@
 
 </Property>
 	<Item Name="TypeDef" Type="Folder">
+		<Property Name="NI.SortType" Type="Int">0</Property>
 		<Item Name="Point" Type="Folder">
+			<Item Name="2D_PointDBL.ctl" Type="VI" URL="../TypeDef/Point/2D_PointDBL.ctl"/>
 			<Item Name="2D_PointI32.ctl" Type="VI" URL="../TypeDef/Point/2D_PointI32.ctl"/>
 			<Item Name="2D_PointI64.ctl" Type="VI" URL="../TypeDef/Point/2D_PointI64.ctl"/>
 			<Item Name="2D_PointSGL.ctl" Type="VI" URL="../TypeDef/Point/2D_PointSGL.ctl"/>
-			<Item Name="2D_PointDBL.ctl" Type="VI" URL="../TypeDef/Point/2D_PointDBL.ctl"/>
+			<Item Name="3D_PointDBL.ctl" Type="VI" URL="../TypeDef/Point/3D_PointDBL.ctl"/>
 			<Item Name="3D_PointI32.ctl" Type="VI" URL="../TypeDef/Point/3D_PointI32.ctl"/>
 			<Item Name="3D_PointI64.ctl" Type="VI" URL="../TypeDef/Point/3D_PointI64.ctl"/>
 			<Item Name="3D_PointSGL.ctl" Type="VI" URL="../TypeDef/Point/3D_PointSGL.ctl"/>
-			<Item Name="3D_PointDBL.ctl" Type="VI" URL="../TypeDef/Point/3D_PointDBL.ctl"/>
+			<Item Name="4D_PointDBL.ctl" Type="VI" URL="../TypeDef/Point/4D_PointDBL.ctl"/>
 			<Item Name="4D_PointI32.ctl" Type="VI" URL="../TypeDef/Point/4D_PointI32.ctl"/>
 			<Item Name="4D_PointI64.ctl" Type="VI" URL="../TypeDef/Point/4D_PointI64.ctl"/>
 			<Item Name="4D_PointSGL.ctl" Type="VI" URL="../TypeDef/Point/4D_PointSGL.ctl"/>
-			<Item Name="4D_PointDBL.ctl" Type="VI" URL="../TypeDef/Point/4D_PointDBL.ctl"/>
 		</Item>
-		<Item Name="LvDatatype.ctl" Type="VI" URL="../TypeDef/LvDatatype.ctl"/>
-		<Item Name="MatInfo.ctl" Type="VI" URL="../TypeDef/MatInfo.ctl"/>
-		<Item Name="NormTypes.ctl" Type="VI" URL="../TypeDef/NormTypes.ctl"/>
-		<Item Name="ReduceTypes.ctl" Type="VI" URL="../TypeDef/ReduceTypes.ctl"/>
+		<Item Name="AlgorithmHint.ctl" Type="VI" URL="../TypeDef/AlgorithmHint.ctl"/>
+		<Item Name="Backend.ctl" Type="VI" URL="../TypeDef/Backend.ctl"/>
+		<Item Name="BackenTarget.ctl" Type="VI" URL="../TypeDef/BackenTarget.ctl"/>
+		<Item Name="BlobInfo.ctl" Type="VI" URL="../TypeDef/BlobInfo.ctl"/>
+		<Item Name="Blobs.ctl" Type="VI" URL="../TypeDef/Blobs.ctl"/>
+		<Item Name="BorderTypes.ctl" Type="VI" URL="../TypeDef/BorderTypes.ctl"/>
+		<Item Name="CmpTypes.ctl" Type="VI" URL="../TypeDef/CmpTypes.ctl"/>
+		<Item Name="CpuFeatures.ctl" Type="VI" URL="../TypeDef/CpuFeatures.ctl"/>
+		<Item Name="DecompTypes.ctl" Type="VI" URL="../TypeDef/DecompTypes.ctl"/>
 		<Item Name="Dim.ctl" Type="VI" URL="../TypeDef/Dim.ctl"/>
+		<Item Name="FlipCode.ctl" Type="VI" URL="../TypeDef/FlipCode.ctl"/>
+		<Item Name="FromTo.ctl" Type="VI" URL="../TypeDef/FromTo.ctl"/>
+		<Item Name="GemmFlags.ctl" Type="VI" URL="../TypeDef/GemmFlags.ctl"/>
+		<Item Name="InterpolationFlags.ctl" Type="VI" URL="../TypeDef/InterpolationFlags.ctl"/>
+		<Item Name="LvDatatype.ctl" Type="VI" URL="../TypeDef/LvDatatype.ctl"/>
 		<Item Name="MatColorChannel.ctl" Type="VI" URL="../TypeDef/MatColorChannel.ctl"/>
 		<Item Name="MatComplexChannel.ctl" Type="VI" URL="../TypeDef/MatComplexChannel.ctl"/>
-		<Item Name="FromTo.ctl" Type="VI" URL="../TypeDef/FromTo.ctl"/>
-		<Item Name="CmpTypes.ctl" Type="VI" URL="../TypeDef/CmpTypes.ctl"/>
-		<Item Name="SortFlags.ctl" Type="VI" URL="../TypeDef/SortFlags.ctl"/>
-		<Item Name="Size.ctl" Type="VI" URL="../TypeDef/Size.ctl"/>
-		<Item Name="GemmFlags.ctl" Type="VI" URL="../TypeDef/GemmFlags.ctl"/>
-		<Item Name="DecompTypes.ctl" Type="VI" URL="../TypeDef/DecompTypes.ctl"/>
-		<Item Name="BorderTypes.ctl" Type="VI" URL="../TypeDef/BorderTypes.ctl"/>
-		<Item Name="FlipCode.ctl" Type="VI" URL="../TypeDef/FlipCode.ctl"/>
-		<Item Name="RotateFlags.ctl" Type="VI" URL="../TypeDef/RotateFlags.ctl"/>
-		<Item Name="SVDFlags.ctl" Type="VI" URL="../TypeDef/SVDFlags.ctl"/>
-		<Item Name="CpuFeatures.ctl" Type="VI" URL="../TypeDef/CpuFeatures.ctl"/>
-		<Item Name="AlgorithmHint.ctl" Type="VI" URL="../TypeDef/AlgorithmHint.ctl"/>
+		<Item Name="MatInfo.ctl" Type="VI" URL="../TypeDef/MatInfo.ctl"/>
+		<Item Name="MatShape.ctl" Type="VI" URL="../TypeDef/MatShape.ctl"/>
 		<Item Name="MorphShapes.ctl" Type="VI" URL="../TypeDef/MorphShapes.ctl"/>
 		<Item Name="MorphTypes.ctl" Type="VI" URL="../TypeDef/MorphTypes.ctl"/>
-		<Item Name="TermType.ctl" Type="VI" URL="../TypeDef/TermType.ctl"/>
-		<Item Name="TermCriteria.ctl" Type="VI" URL="../TypeDef/TermCriteria.ctl"/>
+		<Item Name="NchwMatInfo.ctl" Type="VI" URL="../TypeDef/NchwMatInfo.ctl"/>
+		<Item Name="NchwType.ctl" Type="VI" URL="../TypeDef/NchwType.ctl"/>
+		<Item Name="NormTypes.ctl" Type="VI" URL="../TypeDef/NormTypes.ctl"/>
+		<Item Name="Rect2f.ctl" Type="VI" URL="../TypeDef/Rect2f.ctl"/>
+		<Item Name="ReduceTypes.ctl" Type="VI" URL="../TypeDef/ReduceTypes.ctl"/>
+		<Item Name="RotatedRect.ctl" Type="VI" URL="../TypeDef/RotatedRect.ctl"/>
+		<Item Name="RotateFlags.ctl" Type="VI" URL="../TypeDef/RotateFlags.ctl"/>
+		<Item Name="Size.ctl" Type="VI" URL="../TypeDef/Size.ctl"/>
+		<Item Name="SortFlags.ctl" Type="VI" URL="../TypeDef/SortFlags.ctl"/>
+		<Item Name="SVDFlags.ctl" Type="VI" URL="../TypeDef/SVDFlags.ctl"/>
+		<Item Name="Target.ctl" Type="VI" URL="../TypeDef/Target.ctl"/>
 		<Item Name="TemplateMatchModes.ctl" Type="VI" URL="../TypeDef/TemplateMatchModes.ctl"/>
+		<Item Name="TermCriteria.ctl" Type="VI" URL="../TypeDef/TermCriteria.ctl"/>
+		<Item Name="TermType.ctl" Type="VI" URL="../TypeDef/TermType.ctl"/>
 	</Item>
 	<Item Name="LvHelpers" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
@@ -523,7 +535,6 @@
 			<Item Name="AssertBool.vi" Type="VI" URL="../_LvHelpers/Assert/AssertBool.vi"/>
 		</Item>
 		<Item Name="Dlls" Type="Folder">
-			<Item Name="opencv_world4110.dll" Type="Document" URL="../Dlls/opencv_world4110.dll"/>
 			<Item Name="OlvOpenCvWrapper.dll" Type="Document" URL="../Dlls/OlvOpenCvWrapper.dll"/>
 		</Item>
 		<Item Name="ConstantToArray" Type="Folder">
@@ -534,6 +545,24 @@
 			<Item Name="ConstantToArray_U32Rgba.vi" Type="VI" URL="../_LvHelpers/ConstantToArray/ConstantToArray_U32Rgba.vi"/>
 			<Item Name="ConstantToArray_U64Color.vi" Type="VI" URL="../_LvHelpers/ConstantToArray/ConstantToArray_U64Color.vi"/>
 			<Item Name="ConstantToArray_U64Rgba.vi" Type="VI" URL="../_LvHelpers/ConstantToArray/ConstantToArray_U64Rgba.vi"/>
+		</Item>
+		<Item Name="NchwMatHandling" Type="Folder">
+			<Item Name="RegisterNchwMat" Type="Folder">
+				<Item Name="RegisterNchwMat.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/RegisterNchwMat/RegisterNchwMat.vi"/>
+				<Item Name="RegisterNchwMat_U8.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/RegisterNchwMat/RegisterNchwMat_U8.vi"/>
+				<Item Name="RegisterNchwMat_SGL.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/RegisterNchwMat/RegisterNchwMat_SGL.vi"/>
+			</Item>
+			<Item Name="ReadSizeNchwMat" Type="Folder">
+				<Item Name="ReadSizeNchwMat.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/ReadSizeNchwMat/ReadSizeNchwMat.vi"/>
+				<Item Name="ReadSizeNchwMat_U8.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/ReadSizeNchwMat/ReadSizeNchwMat_U8.vi"/>
+				<Item Name="ReadSizeNchwMat_SGL.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/ReadSizeNchwMat/ReadSizeNchwMat_SGL.vi"/>
+			</Item>
+			<Item Name="WriteSizeNchwMat" Type="Folder">
+				<Item Name="WriteSizeNchwMat.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/WriteSizeNchwMat/WriteSizeNchwMat.vi"/>
+				<Item Name="WriteSizeNchwMat_U8.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/WriteSizeNchwMat/WriteSizeNchwMat_U8.vi"/>
+				<Item Name="WriteSizeNchwMat_SGL.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/WriteSizeNchwMat/WriteSizeNchwMat_SGL.vi"/>
+			</Item>
+			<Item Name="Nchw_CheckSize.vi" Type="VI" URL="../_LvHelpers/NchwMatHandling/Nchw_CheckSize.vi"/>
 		</Item>
 		<Item Name="DependencyConstant.vi" Type="VI" URL="../_LvHelpers/DependencyConstant.vi"/>
 		<Item Name="EdvrObject.lvclass" Type="LVClass" URL="../_LvHelpers/EdvrObject/EdvrObject.lvclass"/>
@@ -693,6 +722,25 @@
 			<Item Name="SVDSolveZ.vim" Type="VI" URL="../CoreFunctionality/SVD/SVDSolveZ.vim"/>
 		</Item>
 	</Item>
+	<Item Name="DNN" Type="Folder">
+		<Item Name="ReadNet" Type="Folder">
+			<Item Name="ReadNet.vi" Type="VI" URL="../DNN/Read/ReadNet.vi"/>
+			<Item Name="ReadNet_Automatic.vi" Type="VI" URL="../DNN/Read/ReadNet_Automatic.vi"/>
+			<Item Name="ReadNet_ONXX.vi" Type="VI" URL="../DNN/Read/ReadNet_ONXX.vi"/>
+			<Item Name="ReadNet_Caffe.vi" Type="VI" URL="../DNN/Read/ReadNet_Caffe.vi"/>
+			<Item Name="ReadNet_Darknet.vi" Type="VI" URL="../DNN/Read/ReadNet_Darknet.vi"/>
+			<Item Name="ReadNet_Tensorflow.vi" Type="VI" URL="../DNN/Read/ReadNet_Tensorflow.vi"/>
+			<Item Name="ReadNet_TFLite.vi" Type="VI" URL="../DNN/Read/ReadNet_TFLite.vi"/>
+			<Item Name="ReadNet_Torch.vi" Type="VI" URL="../DNN/Read/ReadNet_Torch.vi"/>
+			<Item Name="ReadNet_ModelOptimizer.vi" Type="VI" URL="../DNN/Read/ReadNet_ModelOptimizer.vi"/>
+		</Item>
+		<Item Name="Blob.lvclass" Type="LVClass" URL="../DNN/Blob/Blob.lvclass"/>
+		<Item Name="NET.lvclass" Type="LVClass" URL="../DNN/NET/NET.lvclass"/>
+		<Item Name="GetAvailableBackends.vi" Type="VI" URL="../DNN/GetAvailableBackends.vi"/>
+		<Item Name="GetAvailableTargets.vi" Type="VI" URL="../DNN/GetAvailableTargets.vi"/>
+		<Item Name="NmsBoxes.vi" Type="VI" URL="../DNN/NmsBoxes.vi"/>
+		<Item Name="NmsBoxesRotated.vi" Type="VI" URL="../DNN/NmsBoxesRotated.vi"/>
+	</Item>
 	<Item Name="ImageProcessing" Type="Folder">
 		<Item Name="ImageFiltering" Type="Folder">
 			<Item Name="Morphology" Type="Folder">
@@ -725,6 +773,10 @@
 		</Item>
 		<Item Name="ObjectDetection" Type="Folder">
 			<Item Name="MatchTemplate.vim" Type="VI" URL="../ImageProcessing/ObjectDetection/MatchTemplate.vim"/>
+		</Item>
+		<Item Name="GeometricImageTransformations" Type="Folder">
+			<Item Name="GetRotationMatrix2D.vi" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/GetRotationMatrix2D.vi"/>
+			<Item Name="WarpAffine.vim" Type="VI" URL="../ImageProcessing/GeometricImageTransformations/WarpAffine.vim"/>
 		</Item>
 	</Item>
 	<Item Name="System" Type="Folder">
